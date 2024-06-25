@@ -1,5 +1,7 @@
+
 import requests
 import json
+import readline  # or import pyreadline for windows
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from pygments import highlight
 from pygments.lexers import JsonLexer
@@ -35,5 +37,5 @@ print(ascii_art)
 print(Fore.CYAN + description + Style.RESET_ALL)
 
 api_key = '716550-605120-904905-941c40'
-ip_addresses = input("Please enter an IP addresses. If there are multiple IPs, separate by comma: ").split(',')
+ip_addresses = input("Please enter an IP addresses. If there are multiple IPs, separate by comma: ").strip().split(',')
 check_ips(api_key, ip_addresses)
