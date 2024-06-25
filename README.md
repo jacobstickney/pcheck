@@ -1,4 +1,4 @@
-<img src="https://github.com/jacobstickney/pcheck/assets/86248382/35acd613-2c93-4d31-a3f2-4d31219938df" width="650">
+<img src="https://github.com/jacobstickney/pcheck/assets/86248382/35acd613-2c93-4d31-a3f2-4d31219938df" width="720">
 
 
 This Python script queries an IP address against the [proxycheck.io](http://proxycheck.io/) API and retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information. It then outputs the response in a pretty and syntax-highlighted JSON format.
