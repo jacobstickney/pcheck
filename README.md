@@ -1,13 +1,9 @@
-<img src="https://github.com/jacobstickney/pcheck/assets/86248382/35acd613-2c93-4d31-a3f2-4d31219938df" width="720">
-
-
 This Python script queries an IP address against the [proxycheck.io](http://proxycheck.io/) API and retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information. It then outputs the response in a pretty and syntax-highlighted JSON format.
 
 Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
 
-Example output:<br><br>
-<img src="https://github.com/jacobstickney/pcheck/assets/86248382/f67492ad-d3b3-436e-bd82-f09fe26dd7e3" width="650">
-
+<b>Example output:<b><br><br>
+<img src="https://github.com/jacobstickney/pcheck/assets/86248382/0c4b69fd-e288-4dcd-81b2-3d2c6a2ff8dc" width="750">
 
 ## Installation
 
