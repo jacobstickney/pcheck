@@ -5,6 +5,10 @@ This Python script queries an IP address against the [proxycheck.io](http://prox
 
 Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
 
+Example output:
+![image](https://github.com/jacobstickney/pcheck/assets/86248382/44197607-be62-4538-97d7-3deaeb961db6)
+
+
 ## Installation
 
 ### Linux
