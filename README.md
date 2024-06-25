@@ -1,1 +1,1 @@
-# pcheck
+This will query an IP address against proxycheck.io API and retrieve information about the IP including whether it's a proxy, VPN, its ASN and node information. It then outputs the response in a pretty and syntax-highlighted JSON format.
