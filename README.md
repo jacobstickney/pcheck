@@ -3,7 +3,8 @@ This Python script queries an IP address against the [proxycheck.io](http://prox
 Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
 
 <b>Example output:<b><br><br>
-<img src="https://github.com/jacobstickney/pcheck/assets/86248382/0c4b69fd-e288-4dcd-81b2-3d2c6a2ff8dc" width="900">
+<img src="https://github.com/jacobstickney/pcheck/assets/86248382/32855e11-7e41-489f-b540-e909808a5f47" width="900">
+
 
 ## Installation
 
