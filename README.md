@@ -11,7 +11,7 @@ Example output:<br><br>
 
 ## Installation
 
-### Linux
+### Linux (via Git)
 1. Make sure you have Git installed on your system. If not, you can install it using the following command:
 ```
 sudo apt install git
