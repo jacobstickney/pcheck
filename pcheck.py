@@ -24,7 +24,7 @@ Retrieves information about the IP including whether it's a proxy, VPN, its ASN 
 \
 If there are multiple IPs, separate by comma.
 \n
-exit -- exits the script
+exit -- exits the tool
 """
 
 def check_ips(api_key, ip_addresses):
