@@ -22,6 +22,8 @@ ascii_art = r"""
 description = """Your Personal Guard Against IP Masqueraders.
 Retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information.
 \
+It will also output abuse information via AbuseIPB.
+\n
 If there are multiple IPs, separate by comma.
 \n
 exit -- exits the tool
@@ -51,6 +53,25 @@ def check_ips(api_key, ip_addresses):
 
         print("IP Address: ", ip_address)
         print(highlight(json.dumps(output_data, indent=4), JsonLexer(), TerminalFormatter()))
+        
+         # Add this code to access the AbuseIPDB API
+        abuse_key = 'bbc47c583444fd3a88afc32cabb802b01e14cbb4385e3c6821e26f851296bddd85cdfb949cd2f930'
+        abuse_response = requests.get(f'https://api.abuseipdb.com/api/v2/check?ipAddress={ip_address}&maxAgeInDays=365', headers={'Key': abuse_key}, verify=False)
+        abuse_data = abuse_response.json()
+
+        # Filter to only include totalReports, lastReportedAt, and refernece link if they exist
+        abuse_data_filtered = {
+            'totalReports': abuse_data['data'].get('totalReports'),
+            'lastReportedAt': abuse_data['data'].get('lastReportedAt'),
+            'reference': f'https://www.abuseipdb.com/check/{ip_address}'
+        }
+
+        # Remove keys with None values
+        abuse_data_filtered = {k: v for k, v in abuse_data_filtered.items() if v is not None}
+
+        print("Abuse Information (via AbuseIPDB): ")
+        print(highlight(json.dumps(abuse_data_filtered, indent=4), JsonLexer(), TerminalFormatter()))
+        
 print(ascii_art)
 print(Fore.CYAN + description + Style.RESET_ALL)
 
