@@ -51,7 +51,7 @@ def check_ips(api_key, ip_addresses):
         if 'proxy' in data[ip_address]: output_data['proxy'] = data[ip_address]['proxy']
         if 'type' in data[ip_address]: output_data['type'] = data[ip_address]['type']
 
-        print("IP Address: ", ip_address)
+        print("    IP Address: ", ip_address)
         print(highlight(json.dumps(output_data, indent=4), JsonLexer(), TerminalFormatter()))
         
          # Add this code to access the AbuseIPDB API
@@ -69,7 +69,7 @@ def check_ips(api_key, ip_addresses):
         # Remove keys with None values
         abuse_data_filtered = {k: v for k, v in abuse_data_filtered.items() if v is not None}
 
-        print("Abuse Information (via AbuseIPDB): ")
+        print("    " + Fore.RED + "Abuse Information (via AbuseIPDB): " + Style.RESET_ALL)
         print(highlight(json.dumps(abuse_data_filtered, indent=4), JsonLexer(), TerminalFormatter()))
         
 print(ascii_art)
@@ -78,7 +78,7 @@ print(Fore.CYAN + description + Style.RESET_ALL)
 api_key = '716550-605120-904905-941c40'
 
 while True:
-    ip_input = input("Please enter an IP address: ").strip().lower().replace(' ', '')
+    ip_input = input("    Please enter an IP address: ").strip().lower().replace(' ', '')
     print()  # create an additional line break
     if ip_input == 'exit':
         print("Exiting...")
