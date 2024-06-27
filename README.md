@@ -43,13 +43,24 @@ pip3 install requests pygments colorama
 ```
 <br>
 
-6. Run the Python script in your terminal with the following command:
+7. Set the following environment variables:
+- ``API_KEY``: Your API key for [ProxyCheck service](https://proxycheck.io/api/). It is free to obtain an API key. 
+- ``ABUSE_KEY``: Your API key for [AbuseIPDB](https://www.abuseipdb.com/). It is free to obtain an API key.
+  
+You can set these environment variables in your shell before running the script (replace 'your-api-key' and 'your-abuse-key' with your actual keys):
+```
+export API_KEY='your-api-key'
+export ABUSE_KEY='your-abuse-key'
+```
+<br>
+
+8. Run the Python script in your terminal with the following command:
 ```
 python3 pcheck.py
 ```
 <br>
 
-### Windows
+### Windows (via Git)
 1. Make sure you have Python installed on your system. If not, you can download it from [here](https://www.python.org/downloads/). During installation, make sure to check the box that says "Add Python to PATH".
 <br>
 
@@ -80,7 +91,18 @@ cd Documents\pcheck
 ```
 <br>
 
-7. Run the Python script in your Command Prompt with the following command:
+7. Set the following environment variables:
+- ``API_KEY``: Your API key for [ProxyCheck service](https://proxycheck.io/api/). It is free to obtain an API key. 
+- ``ABUSE_KEY``: Your API key for [AbuseIPDB](https://www.abuseipdb.com/). It is free to obtain an API key.
+  
+Set these environment variables in your shell before running the script (replace 'your-api-key' and 'your-abuse-key' with your actual keys):
+```
+set API_KEY=your-api-key
+set ABUSE_KEY=your-abuse-key
+```
+<br>
+
+8. Run the Python script in your Command Prompt with the following command:
 ```
 py pcheck.py
 ```
