@@ -29,6 +29,7 @@ exit -- exits the tool
 
 def check_ips(api_key, ip_addresses):
     for ip_address in ip_addresses:
+        print(f'IP Address: {ip_address}')  # print the IP address first
         response = requests.get(f'https://proxycheck.io/v2/{ip_address}?key={api_key}&vpn=1&asn=1&node=1', verify=False)
         data = response.json()
         if 'proxy' in data[ip_address]:
