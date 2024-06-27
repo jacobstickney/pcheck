@@ -43,18 +43,35 @@ pip3 install requests pygments colorama
 ```
 <br>
 
-7. Set the following environment variables:
+7. Permanently the following environment variables:
 - ``API_KEY``: Your API key for [ProxyCheck service](https://proxycheck.io/api/). It is free to obtain an API key. 
 - ``ABUSE_KEY``: Your API key for [AbuseIPDB](https://www.abuseipdb.com/). It is free to obtain an API key.
-  
-You can set these environment variables in your shell before running the script (replace 'your-api-key' and 'your-abuse-key' with your actual keys):
+<br>
+
+Open the terminal (example below is for Ubuntu Linux) and type:
 ```
-export API_KEY='your-api-key'
-export ABUSE_KEY='your-abuse-key'
+nano ~/.bashrc
+```
+
+This will open the ``.bashrc`` file in a text editor. Scroll to the bottom of the file and add the following lines, replacing 'your_api_key' and 'your_abuse_key' with your actual keys:
+```
+export API_KEY='your_api_key'
+export ABUSE_KEY='your_abuse_key'
+```
+Press CTRL + X to exit, then Y to save changes, and finally hit Enter to write the changes and close the editor.
+  
+8. To ensure the variables are set, either restart the terminal or type:
+```
+source ~/.bashrc
+```
+You can verify if the variables are set by typing:
+```
+echo $API_KEY
+echo $ABUSE_KEY
 ```
 <br>
 
-8. Run the Python script in your terminal with the following command:
+9. Run the Python script in your terminal with the following command:
 ```
 python3 pcheck.py
 ```
@@ -91,18 +108,23 @@ cd Documents\pcheck
 ```
 <br>
 
-7. Set the following environment variables:
-- ``API_KEY``: Your API key for [ProxyCheck service](https://proxycheck.io/api/). It is free to obtain an API key. 
-- ``ABUSE_KEY``: Your API key for [AbuseIPDB](https://www.abuseipdb.com/). It is free to obtain an API key.
-  
-Set these environment variables in your shell before running the script (replace 'your-api-key' and 'your-abuse-key' with your actual keys):
+7. To add the environment variables permanently through the System Properties window:
+- Open the Start Search, type in "env", and choose "Edit the system environment variables":
+- Click the "Environment Variables..." button.
+- Under the "System variables" section, click "New...".
+- Enter "API_KEY" as the Variable name and your actual API key as the Variable value.
+- Click "OK", and then repeat the process for the "ABUSE_KEY".
+- After adding both, click "OK" in the Environment Variables window and then in the System Properties window.
+
+To make sure the variables are set, open a new command prompt and type:
 ```
-set API_KEY=your-api-key
-set ABUSE_KEY=your-abuse-key
+echo %API_KEY%
+echo %ABUSE_KEY%
 ```
+Each command should output the respective key you set.
 <br>
 
-8. Run the Python script in your Command Prompt with the following command:
+9. Run the Python script in your Command Prompt with the following command:
 ```
 py pcheck.py
 ```
