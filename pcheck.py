@@ -93,9 +93,16 @@ def check_ips(api_key, ip_addresses):
 print(ascii_art)
 print(Fore.CYAN + description + Style.RESET_ALL)
 
+# Define the sanitize_ip function
+def sanitize_ip(ip):
+    return ''.join(ch for ch in ip if ch.isdigit() or ch == '.')
+
 while True:
     ip_input = input("    Please enter an IP address: ").strip().lower().replace(' ', '')
     print()
+ 
+    # Sanitize the IP address
+    ip_input = sanitize_ip(ip_input)    
 
     if ip_input == 'exit':
         print("Exiting...")
