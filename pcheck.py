@@ -1,7 +1,5 @@
 import requests
 import json
-import readline  # or impimport requests
-import json
 import readline  # or import pyreadline for windows
 import getpass
 import os  # Add this line to import the os module
