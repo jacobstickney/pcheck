@@ -43,7 +43,7 @@ print(Fore.CYAN + description + Style.RESET_ALL)
 api_key = '716550-605120-904905-941c40'
 
 while True:
-    ip_input = input("Please enter an IP address: ").strip().lower()
+    ip_input = input("Please enter an IP address: ").strip().lower().replace(' ', '')
     if ip_input == 'exit':
         print("Exiting...")
         break
