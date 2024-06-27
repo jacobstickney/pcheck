@@ -2,7 +2,8 @@ import requests
 import json
 import readline  # or import pyreadline for windows
 import getpass
-import os  # Add this line to import the os module
+import os
+import ipaddress 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from pygments import highlight
 from pygments.lexers import JsonLexer
@@ -33,6 +34,14 @@ If there are multiple IPs, separate by comma.
 \n
 exit -- exits the tool
 """
+
+# Add the validate_ip function here
+def validate_ip(ip):
+    try:
+        ipaddress.ip_address(ip)
+        return True
+    except ValueError:
+        return False
 
 def check_ips(api_key, ip_addresses):
     for ip_address in ip_addresses:
@@ -81,6 +90,14 @@ print(Fore.CYAN + description + Style.RESET_ALL)
 
 while True:
     ip_input = input("    Please enter an IP address: ").strip().lower().replace(' ', '')
+    print()
+    if ip_input == 'exit':
+        print("Exiting...")
+        break
+    if not validate_ip(ip_input):
+        print(Fore.RED + "Invalid IP address." + Style.RESET_ALL)
+        print()
+        continue
     print()  # create an additional line break
     if ip_input == 'exit':
         print("Exiting...")
