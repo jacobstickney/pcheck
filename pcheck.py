@@ -58,6 +58,7 @@ api_key = '716550-605120-904905-941c40'
 
 while True:
     ip_input = input("Please enter an IP address: ").strip().lower().replace(' ', '')
+    print()  # create an additional line break
     if ip_input == 'exit':
         print("Exiting...")
         break
