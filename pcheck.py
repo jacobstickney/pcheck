@@ -1,7 +1,10 @@
 import requests
 import json
+import readline  # or impimport requests
+import json
 import readline  # or import pyreadline for windows
 import getpass
+import os  # Add this line to import the os module
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from pygments import highlight
 from pygments.lexers import JsonLexer
@@ -9,6 +12,10 @@ from pygments.formatters import TerminalFormatter
 from colorama import Fore, Style
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+# Assign the environment variables to the api_key and abuse_key variables here
+api_key = os.getenv('API_KEY')
+abuse_key = os.getenv('ABUSE_KEY')
 
 ascii_art = r"""
             _               _    
@@ -55,7 +62,6 @@ def check_ips(api_key, ip_addresses):
         print(highlight(json.dumps(output_data, indent=4), JsonLexer(), TerminalFormatter()))
         
          # Add this code to access the AbuseIPDB API
-        abuse_key = 'bbc47c583444fd3a88afc32cabb802b01e14cbb4385e3c6821e26f851296bddd85cdfb949cd2f930'
         abuse_response = requests.get(f'https://api.abuseipdb.com/api/v2/check?ipAddress={ip_address}&maxAgeInDays=365', headers={'Key': abuse_key}, verify=False)
         abuse_data = abuse_response.json()
 
@@ -74,8 +80,6 @@ def check_ips(api_key, ip_addresses):
         
 print(ascii_art)
 print(Fore.CYAN + description + Style.RESET_ALL)
-
-api_key = '716550-605120-904905-941c40'
 
 while True:
     ip_input = input("    Please enter an IP address: ").strip().lower().replace(' ', '')
