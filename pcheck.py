@@ -29,15 +29,28 @@ exit -- exits the tool
 
 def check_ips(api_key, ip_addresses):
     for ip_address in ip_addresses:
-        print(f'IP Address: {ip_address}')  # print the IP address first
         response = requests.get(f'https://proxycheck.io/v2/{ip_address}?key={api_key}&vpn=1&asn=1&node=1', verify=False)
         data = response.json()
-        if 'proxy' in data[ip_address]:
-            print('Proxy: ' + data[ip_address]['proxy'])
-        if 'type' in data[ip_address]:
-            print('Type: ' + data[ip_address]['type'])
-        print(highlight(json.dumps(data, indent=4), JsonLexer(), TerminalFormatter()))
+        output_data = {}
 
+        # Check for the presence of each key before adding it to the output_data dictionary
+        if 'status' in data[ip_address]: output_data['status'] = data[ip_address]['status']
+        if 'node' in data[ip_address]: output_data['node'] = data[ip_address]['node']
+        if 'asn' in data[ip_address]: output_data['asn'] = data[ip_address]['asn']
+        if 'range' in data[ip_address]: output_data['range'] = data[ip_address]['range']
+        if 'hostname' in data[ip_address]: output_data['hostname'] = data[ip_address]['hostname']
+        if 'provider' in data[ip_address]: output_data['provider'] = data[ip_address]['provider']
+        if 'organization' in data[ip_address]: output_data['organization'] = data[ip_address]['organization']
+        if 'continent' in data[ip_address]: output_data['continent'] = data[ip_address]['continent']
+        if 'country' in data[ip_address]: output_data['country'] = data[ip_address]['country']
+        if 'continent code' in data[ip_address]: output_data['continent code'] = data[ip_address]['continent code']
+        if 'region' in data[ip_address]: output_data['region'] = data[ip_address]['region']
+        if 'city' in data[ip_address]: output_data['city'] = data[ip_address]['city']
+        if 'proxy' in data[ip_address]: output_data['proxy'] = data[ip_address]['proxy']
+        if 'type' in data[ip_address]: output_data['type'] = data[ip_address]['type']
+
+        print("IP Address: ", ip_address)
+        print(highlight(json.dumps(output_data, indent=4), JsonLexer(), TerminalFormatter()))
 print(ascii_art)
 print(Fore.CYAN + description + Style.RESET_ALL)
 
