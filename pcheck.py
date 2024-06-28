@@ -36,12 +36,14 @@ exit -- exits the tool
 """
 
 # Add the validate_ip function here
-def validate_ip(ip):
-    try:
-        ipaddress.ip_address(ip)
-        return True
-    except ValueError:
-        return False
+def validate_ip(ip_input):
+    ip_addresses = ip_input.split(',')
+    for ip in ip_addresses:
+        try:
+            ipaddress.ip_address(ip)
+        except ValueError:
+            return False
+    return True
 
 def check_ips(api_key, ip_addresses):
     for ip_address in ip_addresses:
@@ -73,7 +75,6 @@ def check_ips(api_key, ip_addresses):
         abuse_data = abuse_response.json()
 
         try:
-            # Filter to only include totalReports, lastReportedAt, and reference link if they exist
             abuse_data_filtered = {
                 'totalReports': abuse_data['data'].get('totalReports'),
                 'lastReportedAt': abuse_data['data'].get('lastReportedAt'),
@@ -81,32 +82,32 @@ def check_ips(api_key, ip_addresses):
             }
         except KeyError:
             print("Unexpected API response: 'data' key not found.")
-            return
+            continue
 
+        abuse_data_filtered = {k: v for k, v in abuse_data_filtered.items() if v is not None}
 
-        # Remove keys with None values
-    abuse_data_filtered = {k: v for k, v in abuse_data_filtered.items() if v is not None}
-    
-    print("    " + Fore.RED + "Abuse Information (via AbuseIPDB): " + Style.RESET_ALL)
-    print(highlight(json.dumps(abuse_data_filtered, indent=4), JsonLexer(), TerminalFormatter()))
+        print("    " + Fore.RED + "Abuse Information (via AbuseIPDB): " + Style.RESET_ALL)
+        print(highlight(json.dumps(abuse_data_filtered, indent=4), JsonLexer(), TerminalFormatter()))
         
 print(ascii_art)
 print(Fore.CYAN + description + Style.RESET_ALL)
 
 # Define the sanitize_ip function
 def sanitize_ip(ip):
-    return ''.join(ch for ch in ip if ch.isdigit() or ch == '.')
+    return ''.join(ch for ch in ip if ch.isdigit() or ch == '.' or ch == ',')
 
 while True:
     ip_input = input("    Please enter an IP address: ").strip().lower().replace(' ', '')
     print()
- 
+    
+    if ip_input == 'exit':
+        print("Exiting...")
+        break 
+        
     # Sanitize the IP address
     ip_input = sanitize_ip(ip_input)    
 
-    if ip_input == 'exit':
-        print("Exiting...")
-        break
+
     if not validate_ip(ip_input):
         print(Fore.RED + "Invalid IP address." + Style.RESET_ALL)
         print()
