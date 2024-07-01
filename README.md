@@ -79,6 +79,11 @@ python3 pcheck.py
 ```
 <br>
 
+10. Change the permissions of the script to make it executable by running `chmod +x script.py` in your terminal.
+<br>
+
+11. Run your script by typing `./script.py`.
+
 ### Windows (via Git)
 1. Make sure you have Python installed on your system. If not, you can download it from [here](https://www.python.org/downloads/). During installation, make sure to check the box that says "Add Python to PATH".
 <br>
@@ -128,6 +133,6 @@ Each command should output the respective key you set.
 
 9. Run the Python script in your Command Prompt with the following command:
 ```
-py pcheck.py
+pcheck.py
 ```
 
