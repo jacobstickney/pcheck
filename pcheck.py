@@ -49,6 +49,12 @@ def validate_ip(ip_input):
 
 def check_ips(api_key, ip_addresses):
     for ip_address in ip_addresses:
+        ip = ipaddress.ip_address(ip_address.strip())
+        if ip.is_private:
+            print(f"{ip_address} is a private IP address, and is only used in internal network environments.")
+            continue
+    
+    
         response = requests.get(f'https://proxycheck.io/v2/{ip_address}?key={api_key}&vpn=1&asn=1&node=1', verify=False)
         data = response.json()
         output_data = {}
