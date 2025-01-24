@@ -2,8 +2,6 @@
 
 This tool queries an IP address against the [proxycheck.io](http://proxycheck.io/) API and retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information. It will also output abuse information via [AbuseIPB](https://www.abuseipdb.com/).
 
-Results are displayed in JSON format.
-
 Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
 
 <b>Example output:<b><br><br>
