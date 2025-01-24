@@ -65,7 +65,6 @@ source ~/.bashrc
 You can verify if the variables are set by typing:
 ```
 echo $API_KEY
-echo $ABUSE_KEY
 ```
 <br>
 
@@ -116,8 +115,7 @@ cd Documents\pcheck
 - Click the "Environment Variables..." button.
 - Under the "System variables" section, click "New...".
 - Enter "API_KEY" as the Variable name and your actual API key as the Variable value.
-- Click "OK", and then repeat the process for the "ABUSE_KEY".
-- After adding both, click "OK" in the Environment Variables window and then in the System Properties window.
+- After adding, click "OK" in the Environment Variables window and then in the System Properties window.
 
 To make sure the variables are set, open a new command prompt and type:
 ```
