@@ -5,7 +5,7 @@ This tool queries an IP address against the [proxycheck.io](http://proxycheck.io
 Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
 
 <b>Example output:<b><br><br>
-<img src="https://github.com/jacobstickney/pcheck/assets/86248382/fe21d7f7-7449-416b-a344-27ca68b9cbfe" width="900">
+<img src="https://github.com/user-attachments/assets/f547116d-e9ab-4b5e-be58-2f1c4ae14525" width="900">
 
 ## Installation
 
