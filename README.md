@@ -1,6 +1,6 @@
 # pcheck
 
-This tool queries an IP address against the [proxycheck.io](http://proxycheck.io/) API and retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information. It will also output abuse information via [AbuseIPB](https://www.abuseipdb.com/).
+This tool queries an IP address against the [proxycheck.io](http://proxycheck.io/) API and retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information.
 
 Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
 
@@ -45,7 +45,6 @@ pip3 install requests pygments colorama
 
 7. Permanently the following environment variables:
 - ``API_KEY``: Your API key for [ProxyCheck service](https://proxycheck.io/api/). It is free to obtain an API key. 
-- ``ABUSE_KEY``: Your API key for [AbuseIPDB](https://www.abuseipdb.com/). It is free to obtain an API key.
 <br>
 
 Open the terminal (example below is for Ubuntu Linux) and type:
@@ -124,7 +123,6 @@ cd Documents\pcheck
 To make sure the variables are set, open a new command prompt and type:
 ```
 echo %API_KEY%
-echo %ABUSE_KEY%
 ```
 Each command should output the respective key you set.
 <br>
