@@ -2,7 +2,7 @@
 
 This tool queries an IP address against the [proxycheck.io](http://proxycheck.io/) API and retrieves information about the IP including whether it's a proxy, VPN, its ASN and node information.
 
-Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual JSON output for each one.
+Multiple IPs can be queried, which will result in a sequential query for each IP, returning an individual output for each one.
 
 <b>Example output:<b><br><br>
 <img src="https://github.com/user-attachments/assets/f547116d-e9ab-4b5e-be58-2f1c4ae14525" width="900">
