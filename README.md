@@ -55,7 +55,6 @@ nano ~/.bashrc
 This will open the ``.bashrc`` file in a text editor. Scroll to the bottom of the file and add the following lines, replacing 'your_api_key' and 'your_abuse_key' with your actual keys:
 ```
 export API_KEY='your_api_key'
-export ABUSE_KEY='your_abuse_key'
 ```
 Press CTRL + X to exit, then Y to save changes, and finally hit Enter to write the changes and close the editor.
   
